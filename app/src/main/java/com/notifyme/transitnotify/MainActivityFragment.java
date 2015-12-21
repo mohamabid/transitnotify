@@ -25,10 +25,10 @@ public class MainActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container,true);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, true);
         List<VehicleDetails> arrivals = new ArrayList<>();
         arrivals.addAll(createDummyVehicleDetails());
-        ArrayAdapter<VehicleDetails> arrivalsAdapter = new ArrayAdapter<VehicleDetails>(getActivity(),R.layout.list_item_arrivals, R.id.listview_arrivals,arrivals);
+        ArrayAdapter<VehicleDetails> arrivalsAdapter = new ArrayAdapter<VehicleDetails>(getActivity(), R.layout.list_item_arrivals, R.id.listview_arrivals, arrivals);
 
         ListView listView = (ListView) rootView.findViewById(R.id.listview_arrivals);
         listView.setAdapter(arrivalsAdapter);
@@ -39,7 +39,7 @@ public class MainActivityFragment extends Fragment {
     private Collection<VehicleDetails> createDummyVehicleDetails() {
         List<VehicleDetails> vehicles = new ArrayList<>();
         for (int i = 1; i <= 100; i++) {
-            vehicles.add(new VehicleDetails(i,"Some Destination "+i, System.nanoTime(),"BusId"+i, 1.1,1.2,20,false));
+            vehicles.add(new VehicleDetails(i, "Some Destination " + i, System.nanoTime(), "BusId" + i, 1.1, 1.2, 20, false));
         }
         return vehicles;
     }
